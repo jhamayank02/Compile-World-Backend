@@ -13,7 +13,7 @@ var qs = require('qs');
 app.use(express.json());
 // app.use(cors(corsOptions))
 
-app.post("/compile", (req, res)=>{
+app.post("/compile", cors(), (req, res)=>{
     const {code, language, input} = req.body;
 
     var data = qs.stringify({
