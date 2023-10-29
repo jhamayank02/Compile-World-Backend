@@ -5,13 +5,13 @@ const axios = require('axios');
 var qs = require('qs');
 
 const cors=require("cors");
-// const corsOptions ={
-//    origin:'*', 
-//    credentials:true,
-//    optionSuccessStatus:200,
-// }
+const corsOptions ={
+   origin:'*', 
+   credentials:true,
+   optionSuccessStatus:200,
+}
 app.use(express.json());
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 app.post("/compile", cors(), (req, res)=>{
     const {code, language, input} = req.body;
