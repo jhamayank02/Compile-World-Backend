@@ -4,7 +4,7 @@ const app = express();
 const axios = require('axios');
 var qs = require('qs');
 
-// const cors=require("cors");
+const cors=require("cors");
 // const corsOptions ={
 //    origin:'*', 
 //    credentials:true,
