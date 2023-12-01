@@ -45,8 +45,9 @@ app.post("/compile", cors(), (req, res)=>{
       })
       .catch(function (error) {
         // res.send(408, {output: error.response.data.error, error: true})
-        res.status(408).send({output: error.response.data.error, error: true});
+        res.status(error.response.data.status).send({output: error.response.data.error, error: true});
       });
 })
 
-app.listen(3000);
+// app.listen(3000);
+app.listen(80);
