@@ -35,14 +35,17 @@ app.post("/compile", cors(), (req, res)=>{
         const outputData = response.data
 
         if(outputData.error !== ""){
-          res.send(200, {output: outputData.error, error: true})
+          // res.send(200, {output: outputData.error, error: true})
+          res.status(200).send({output: outputData.error, error: true});
         }
         else{
-            res.send(200, {output: outputData.output, error: false})
+            // res.send(200, {output: outputData.output, error: false})
+            res.status(200).send({output: outputData.output, error: false});
         }
       })
       .catch(function (error) {
-        res.send(408, {output: error.response.data.error, error: true})
+        // res.send(408, {output: error.response.data.error, error: true})
+        res.status(408).send({output: error.response.data.error, error: true});
       });
 })
 
